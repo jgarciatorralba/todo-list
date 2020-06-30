@@ -1,0 +1,408 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  background-color: #646b63;
+  /* max-width: 960px; */
+  /* min-height: 100vh; */
+  width: 960px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header,
+main {
+  background-color: white;
+}
+
+/* HEADER */
+.header-container {
+  border: solid 1px rgba(0, 0, 0, 1);
+  border-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-text-cont {
+  width: 25%;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.header-search-cont {
+  width: 75%;
+  position: relative;
+}
+
+.search-bar {
+  position: absolute;
+  top: 26.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  width: 400px;
+  text-align: center;
+}
+
+.search-bar i {
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.search-bar input {
+  position: absolute;
+  background-color: transparent;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 35px;
+  width: 400px;
+  border-radius: 17.5px;
+  border: solid 1px rgba(0, 0, 0, 0.7);
+  padding: 1px 10px 1px 30px;
+  font-size: 14px;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+/* MAIN CONTENT */
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* SIDE SECTION */
+.lists-cont {
+  width: 25%;
+  border: solid 1px rgba(0, 0, 0, 1);
+  height: 500px;
+  overflow: scroll;
+  padding: 0 5px;
+}
+
+.regular-lists-cont {
+  border-bottom: solid 2px rgba(0, 0, 0, 0.4);
+}
+
+.reg-lists,
+.custom-lists {
+  margin: 5px 0;
+  position: relative;
+}
+
+.reg-lists p,
+.custom-lists p {
+  padding: 10px;
+}
+
+.reg-lists:hover,
+.custom-lists:hover {
+  background-color: #cdcdcd;
+  cursor: pointer;
+}
+
+.reg-lists.selected,
+.custom-lists.selected {
+  background-color: black;
+  color: white;
+}
+
+#add-list {
+  cursor: auto;
+}
+
+.reg-lists i,
+.custom-lists i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  visibility: hidden;
+}
+
+.add-list-cont {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  width: 50px;
+  background-color: #e3e4e5;
+  border: solid 1px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.custom-lists i {
+  cursor: pointer;
+}
+
+.add-list-cont i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* MAIN TASKS SECTION */
+.tasks-cont {
+  position: relative;
+  width: 75%;
+  height: 500px;
+  overflow: scroll;
+  border: solid 1px rgba(0, 0, 0, 1);
+  border-left: 0;
+}
+
+.tasks-header {
+  text-align: center;
+  padding: 10px;
+}
+
+.tasks-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 5px;
+}
+
+.tasks-item .col1 {
+  width: 10%;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+.tasks-item .col1 input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40%;
+}
+
+.tasks-item .col2 {
+  width: 70%;
+  padding: 5px 10px;
+  text-align: justify;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.tasks-item .col2 p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tasks-item .col3 {
+  width: 20%;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+.tasks-item .col3 p {
+  margin-left: 20px;
+}
+
+.tasks-item .col3 input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15%;
+}
+
+.fa-plus-circle {
+  font-size: 28px;
+  color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.fa-plus-circle:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* MODAL ONE */
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+
+.modal-one,
+.modal-two,
+.modal-three,
+.modal-four {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-one .fa-times-circle,
+.modal-two .fa-times-circle,
+.modal-three .fa-times-circle,
+.modal-four .fa-times-circle {
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  right: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.form {
+  margin: 30px auto;
+}
+
+.form-control {
+  margin: 30px auto;
+  width: 500px;
+  position: relative;
+}
+
+.form-control:nth-child(2) {
+  height: 100px;
+}
+
+.form-control small {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 160px;
+  font-size: 14px;
+  color: red;
+  /* visibility: hidden; */
+}
+
+.form-control label {
+  text-align: left;
+  display: inline-block;
+  width: 100px;
+}
+
+.checkboxes-container label {
+  text-align: left;
+  display: inline-block;
+  width: 100px;
+}
+
+.checkboxes-container input {
+  margin: 0 10px 0 30px;
+  position: relative;
+  bottom: 1px;
+}
+
+.form-control input,
+.form-control select {
+  width: 300px;
+  height: 30px;
+  font-size: 14px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.form textarea {
+  width: 300px;
+  height: 100px;
+  font-size: 14px;
+  padding: 5px;
+  margin-left: -27.5px;
+}
+
+.form-control:nth-child(2)>label {
+  width: 100px;
+  float: left;
+  margin-left: 42.5px;
+}
+
+.buttons {
+  text-align: right;
+  margin-right: 33px;
+}
+
+.buttons button {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #DAE3E5;
+}
+
+.modal-container.one,
+.modal-container.two,
+.modal-container.three,
+.modal-container.four {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-container.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MODAL THREE */
+.modal-three p {
+  margin: 30px auto;
+  padding: 0 35px;
+}
+
+/* MODAL FOUR */
+.modal-four .task-details {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.task-details p {
+  margin: 10px 0;
+}
+
+.modal-four .buttons {
+  text-align: center;
+  margin: 0 auto;
+}

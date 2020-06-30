@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta author="Jorge García Torralba">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <script src="https://kit.fontawesome.com/71f02e573d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-text-cont">
+        <h1>To Do List</h1>
+      </div>
+      <div class="header-search-cont">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." id="search" autocomplete="off">
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="content-container">
+      <div class="lists-cont">
+        <div class="regular-lists-cont">
+          <div class="reg-lists selectable">
+            <p>Tasks</p>
+            <i class="fas fa-caret-right"></i>
+          </div>
+          <div class="reg-lists selectable">
+            <p>Important</p>
+            <i class="fas fa-caret-right"></i>
+          </div>
+          <div class="reg-lists selectable">
+            <p>Completed</p>
+            <i class="fas fa-caret-right"></i>
+          </div>
+          <div class="reg-lists" id="add-list">
+            <p>Custom lists</p>
+            <div class="add-list-cont" id="add-list-btn">
+              &nbsp;
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="custom-lists-cont">
+        </div>
+      </div>
+      <div class="tasks-cont">
+        <div class="tasks-header">
+          <h2>Tasks</h2>
+        </div>
+        <i class="fas fa-plus-circle" id="create-task"></i>
+      </div>
+    </div>
+    <div class="modal-container one" id="modal1-container">
+      <div class="modal-one">
+        <i class="far fa-times-circle" id="modal1-close"></i>
+        <h2>New Task</h2>
+        <div class="form">
+          <div class="form-control">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title">
+            <small id="error-title"></small>
+          </div>
+          <div class="form-control">
+            <label for="description">Description:</label>
+            <textarea id="description"></textarea>
+            <small id="error-description"></small>
+          </div>
+          <div class="checkboxes-container">
+            <input type="checkbox" name="completed" id="completed">
+            <label for="completed">Completed</label>
+            <input type="checkbox" name="important" id="important">
+            <label for="important">Important</label>
+          </div>
+          <div class="form-control">
+            <label for="custom-list">Custom list:</label>
+            <select name="custom-list" id="custom-list">
+              <option value="" selected>Select a custom list</option>
+            </select>
+          </div>
+          <div class="form-control">
+            <label for="">Task color:</label>
+            <select name="task-color" id="task-color">
+              <option value="" selected>Select a task color</option>
+              <option value="purple">Purple</option>
+              <option value="green">Green</option>
+              <option value="yellow">Yellow</option>
+              <option value="orange">Orange</option>
+              <option value="grey">Grey</option>
+              <option value="pink">Pink</option>
+              <option value="blue">Blue</option>
+            </select>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="accept" id="modal1-accept">Accept</button>
+          <button class="cancel" id="modal1-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container two" id="modal2-container">
+      <div class="modal-two">
+        <i class="far fa-times-circle" id="modal2-close"></i>
+        <h2>New List</h2>
+        <div class="form">
+          <div class="form-control">
+            <label for="list-name">List Name:</label>
+            <input type="text" name="list-name" id="list-name">
+            <small id="error-list-name"></small>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="accept" id="modal2-accept">Accept</button>
+          <button class="cancel" id="modal2-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container three" id="modal3-container">
+      <div class="modal-three">
+        <i class="far fa-times-circle" id="modal3-close"></i>
+        <h2>Delete List</h2>
+        <p>The list you are trying to delete contains at least one task. Are you sure you want to proceed?</p>
+        <div class="buttons">
+          <button class="accept" id="modal3-delete">Accept</button>
+          <button class="cancel" id="modal3-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container four" id="modal4-container">
+      <div class="modal-four">
+        <i class="far fa-times-circle" id="modal4-close"></i>
+        <h2>Task details</h2>
+        <div class="task-details">
+        </div>
+        <div class="buttons">
+          <button class="delete" id="modal4-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
